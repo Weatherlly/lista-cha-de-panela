@@ -4,21 +4,13 @@ const path = require('path');
 const cors = require('cors');
 
 const app = express();
-const IP = process.env.IP || '127.0.0.1';
+const IP = process.env.IP || '0.0.0.0';
 const PORT = process.env.PORT || 5000;
 
 // Middleware com CORS configurado corretamente
 app.use(cors({
-    origin: function(origin, callback) {
-        // Permite requests sem origin (como mobile apps ou curl requests)
-        if(!origin) return callback(null, true);
-        if(origin.includes('localhost') || origin.includes('127.0.0.1')) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true
+    origin: '*',  // Permite todas as origens
+    credentials: false
 }));
 
 app.use(express.json({ limit: '10mb' }));
@@ -121,16 +113,16 @@ app.post('/api/reservar', async (req, res) => {
         }
         
         // Verificar se o usuário já reservou algum presente
-        const usuarioJaReservou = pessoas.some(p => 
-            p.nome.toLowerCase() === nomeNormalizado.toLowerCase()
-        );
+        // const usuarioJaReservou = pessoas.some(p => 
+        //     p.nome.toLowerCase() === nomeNormalizado.toLowerCase()
+        // );
         
-        if (usuarioJaReservou) {
-            return res.json({ 
-                success: false, 
-                message: 'Você já reservou um presente' 
-            });
-        }
+        // if (usuarioJaReservou) {
+        //     return res.json({ 
+        //         success: false, 
+        //         message: 'Você já reservou um presente' 
+        //     });
+        // }
         
         // Atualizar o presente
         presentes[presenteIndex].reservado = true;
@@ -174,10 +166,10 @@ app.post('/api/reservar', async (req, res) => {
     }
 });
 
-// Rota para cancelar reserva
+// Rota para cancelar reserva - VERSÃO CORRIGIDA
 app.post('/api/cancelar-reserva', async (req, res) => {
     try {
-        const { nomeUsuario } = req.body;
+        const { nomeUsuario, presenteId } = req.body; // Adicionar presenteId
         
         if (!isValidName(nomeUsuario)) {
             return res.status(400).json({ 
@@ -193,22 +185,23 @@ app.post('/api/cancelar-reserva', async (req, res) => {
             readJsonFile(PESSOAS_FILE)
         ]);
         
-        // Encontrar a pessoa
+        // Encontrar a pessoa E o presente específico
         const pessoaIndex = pessoas.findIndex(p => 
-            p.nome.toLowerCase() === nomeNormalizado.toLowerCase()
+            p.nome.toLowerCase() === nomeNormalizado.toLowerCase() && 
+            p.presenteId === presenteId // Verificar o presente específico
         );
         
         if (pessoaIndex === -1) {
             return res.status(404).json({ 
                 success: false, 
-                message: 'Nenhuma reserva encontrada para este nome' 
+                message: 'Nenhuma reserva encontrada para este nome e presente' 
             });
         }
         
-        const presenteId = pessoas[pessoaIndex].presenteId;
+        const presenteIdEncontrado = pessoas[pessoaIndex].presenteId;
         
         // Encontrar e atualizar o presente
-        const presenteIndex = presentes.findIndex(p => p.id === presenteId);
+        const presenteIndex = presentes.findIndex(p => p.id === presenteIdEncontrado);
         if (presenteIndex !== -1) {
             presentes[presenteIndex].reservado = false;
             delete presentes[presenteIndex].reservadoPor;

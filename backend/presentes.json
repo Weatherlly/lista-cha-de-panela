@@ -3,10 +3,8 @@
     "id": "1",
     "nome": "Jogo de Panelas",
     "descricao": "Conjunto de panelas antiaderentes de alta qualidade",
-    "reservado": true,
-    "reservadoPor": "weatherly",
-    "categoria": "cozinha",
-    "dataReserva": "2025-08-20T13:59:46.822Z"
+    "reservado": false,
+    "categoria": "cozinha"
   },
   {
     "id": "2",
@@ -37,8 +35,9 @@
     "id": "5",
     "nome": "Cesta de Vinhos",
     "descricao": "Cesta com vinhos selecionados e queijos",
-    "reservado": false,
-    "reservadoPor": null,
-    "categoria": "cozinha"
+    "reservado": true,
+    "reservadoPor": "weatherly",
+    "categoria": "cozinha",
+    "dataReserva": "2025-08-21T19:03:16.158Z"
   }
 ]

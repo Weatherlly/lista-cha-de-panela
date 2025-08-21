@@ -283,11 +283,12 @@ const ListPage = {
         });
         
         if (result.success) {
-            // Feedback visual imediato
+            // Feedback visual imediato SEM recarregar a página toda
             const giftContainer = document.querySelector(`.gift-container[data-id="${giftId}"]`);
             if (giftContainer) {
                 const checkbox = giftContainer.querySelector('.gift-checkbox');
                 const statusDiv = giftContainer.querySelector('.gift-status');
+                const giftName = giftContainer.querySelector('.gift-name');
                 
                 // Atualizar visualmente
                 checkbox.innerHTML = `
@@ -296,8 +297,13 @@ const ListPage = {
                     </svg>
                 `;
                 checkbox.classList.add('bg-marsala', 'border-marsala');
+                checkbox.classList.remove('hover:border-golden');
+                
                 statusDiv.textContent = '✅ Reservado por você';
                 statusDiv.className = 'gift-status text-xs font-medium ml-2 text-marsala';
+                
+                giftName.classList.remove('hover:text-marsala', 'cursor-pointer');
+                giftName.classList.add('cursor-not-allowed');
                 
                 // Mostrar seletor de cor se existir
                 const colorSelect = giftContainer.querySelector('.gift-color');
@@ -310,15 +316,76 @@ const ListPage = {
                 if (removeBtn) {
                     removeBtn.classList.remove('hidden');
                 }
+                
+                // Atualizar contadores sem recarregar tudo
+                ListPage.updateCountersAfterReservation();
             }
-            
-            // Recarregar contadores
-            ListPage.loadGifts();
         } else {
             alert(result.message);
         }
     } catch (error) {
         alert('Erro ao reservar presente. Tente novamente.');
+    }
+},
+// Adicionar esta função para atualizar contadores
+updateCountersAfterReservation: async () => {
+    try {
+        const presentes = await ApiService.get('/api/presentes');
+        ListPage.updateCounters(presentes);
+    } catch (error) {
+        console.error('Erro ao atualizar contadores:', error);
+    }
+},
+handleGiftRemoval: async (giftId) => {
+    const guestName = StateManager.getGuestName();
+    
+    if (confirm('Tem certeza que deseja cancelar a reserva deste presente?')) {
+        try {
+            const result = await ApiService.post('/api/cancelar-reserva', { 
+                nomeUsuario: guestName,
+                presenteId: giftId // Adicionar o ID do presente
+            });
+            
+            if (result.success) {
+                // Feedback visual imediato
+                const giftContainer = document.querySelector(`.gift-container[data-id="${giftId}"]`);
+                if (giftContainer) {
+                    const checkbox = giftContainer.querySelector('.gift-checkbox');
+                    const statusDiv = giftContainer.querySelector('.gift-status');
+                    const giftName = giftContainer.querySelector('.gift-name');
+                    
+                    // Restaurar visualmente
+                    checkbox.innerHTML = '';
+                    checkbox.classList.remove('bg-marsala', 'border-marsala');
+                    checkbox.classList.add('hover:border-golden');
+                    
+                    statusDiv.textContent = 'Disponível';
+                    statusDiv.className = 'gift-status text-xs font-medium ml-2 text-green-600';
+                    
+                    giftName.classList.add('hover:text-marsala', 'cursor-pointer');
+                    giftName.classList.remove('cursor-not-allowed');
+                    
+                    // Esconder seletor de cor
+                    const colorSelect = giftContainer.querySelector('.gift-color');
+                    if (colorSelect) {
+                        colorSelect.classList.add('hidden');
+                    }
+                    
+                    // Esconder botão de remover
+                    const removeBtn = giftContainer.querySelector('.remove-gift');
+                    if (removeBtn) {
+                        removeBtn.classList.add('hidden');
+                    }
+                    
+                    // Atualizar contadores
+                    ListPage.updateCountersAfterReservation();
+                }
+            } else {
+                alert(result.message);
+            }
+        } catch (error) {
+            alert('Erro ao cancelar reserva. Tente novamente.');
+        }
     }
 },
     handleSaveSelections: () => {
