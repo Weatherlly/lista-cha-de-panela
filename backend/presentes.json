@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "nome": "Jogo de Panelas",
+    "descricao": "Conjunto de panelas antiaderentes de alta qualidade",
+    "reservado": true,
+    "reservadoPor": "weatherly",
+    "categoria": "cozinha",
+    "dataReserva": "2025-08-20T13:59:46.822Z"
+  },
+  {
+    "id": "2",
+    "nome": "Máquina de Café",
+    "descricao": "Máquina de café espresso automática",
+    "reservado": false,
+    "reservadoPor": null,
+    "categoria": "cozinha"
+  },
+  {
+    "id": "3",
+    "nome": "Jogo de Toalhas",
+    "descricao": "Conjunto de toalhas de banho e rosto",
+    "reservado": true,
+    "reservadoPor": "iris",
+    "categoria": "cozinha",
+    "dataReserva": "2025-08-20T14:00:09.084Z"
+  },
+  {
+    "id": "4",
+    "nome": "Liquidificador",
+    "descricao": "Liquidificador potente com várias velocidades",
+    "reservado": false,
+    "reservadoPor": null,
+    "categoria": "cozinha"
+  },
+  {
+    "id": "5",
+    "nome": "Cesta de Vinhos",
+    "descricao": "Cesta com vinhos selecionados e queijos",
+    "reservado": false,
+    "reservadoPor": null,
+    "categoria": "cozinha"
+  }
+]
