@@ -4,7 +4,7 @@ const path = require('path');
 const cors = require('cors');
 
 const app = express();
-const IP = process.env.IP || '127.0.0.1';
+const IP = process.env.IP || '18.212.217.221';
 const PORT = process.env.PORT || 5000;
 
 // Middleware com CORS configurado corretamente
@@ -12,7 +12,7 @@ app.use(cors({
     origin: function(origin, callback) {
         // Permite requests sem origin (como mobile apps ou curl requests)
         if(!origin) return callback(null, true);
-        if(origin.includes('localhost') || origin.includes('127.0.0.1')) {
+        if(origin.includes('localhost') || origin.includes('18.212.217.221')) {
             callback(null, true);
         } else {
             callback(new Error('Not allowed by CORS'));
