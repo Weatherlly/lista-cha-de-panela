@@ -2,7 +2,7 @@
 lucide.createIcons();
 
 // Constantes
-const API_BASE_URL = 'http://127.0.0.1:5000';
+const API_BASE_URL = 'http://18.212.217.221:5000';
 
 // Utilidades
 const Utils = {
