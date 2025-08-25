@@ -2,7 +2,7 @@
 lucide.createIcons();
 
 // Constantes
-const API_BASE_URL = 'http://127.0.0.1:5000';
+const API_BASE_URL = 'http://18.212.217.221:5000';
 
 // Utilidades
 const Utils = {
@@ -138,7 +138,8 @@ const ListPage = {
     const categories = {
         kitchenGifts: presentes.filter(p => p.categoria === 'cozinha'),
         laundryGifts: presentes.filter(p => p.categoria === 'lavanderia'),
-        bedroomGifts: presentes.filter(p => p.categoria === 'quarto')
+        bedroomGifts: presentes.filter(p => p.categoria === 'quarto'),
+        utilsGifts: presentes.filter(p => p.categoria === 'utilidades domésticas')
     };
     
     for (const [containerId, gifts] of Object.entries(categories)) {
@@ -162,7 +163,7 @@ const ListPage = {
     createGiftElement: (gift) => {
         const guestName = StateManager.getGuestName();
         const isReservedByMe = gift.reservadoPor === guestName;
-        const isReservedByOther = gift.reservado && !isReservedByMe;
+        const isReservedByOther = gift.reservado && !isReservedByMe && gift.permiteMultiplos !== true;
 
         let statusClass = '';
         if (isReservedByMe) statusClass = 'reserved-by-me';

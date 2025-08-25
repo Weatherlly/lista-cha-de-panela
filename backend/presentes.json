@@ -1,43 +1,385 @@
 [
   {
     "id": "1",
-    "nome": "Jogo de Panelas",
+    "nome": "Conjunto de panelas",
     "descricao": "Conjunto de panelas antiaderentes de alta qualidade",
     "reservado": false,
     "categoria": "cozinha"
   },
   {
     "id": "2",
-    "nome": "Máquina de Café",
-    "descricao": "Máquina de café espresso automática",
+    "nome": "Frigideira antiaderente grande",
+    "descricao": "Frigideira grande com revestimento antiaderente",
     "reservado": false,
-    "reservadoPor": null,
+    "reservadoPor": [],
     "categoria": "cozinha"
   },
   {
     "id": "3",
-    "nome": "Jogo de Toalhas",
-    "descricao": "Conjunto de toalhas de banho e rosto",
-    "reservado": true,
-    "reservadoPor": "iris",
-    "categoria": "cozinha",
-    "dataReserva": "2025-08-20T14:00:09.084Z"
+    "nome": "Assadeira de vidro com tampa",
+    "descricao": "Assadeira de vidro resistente com tampa",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
   },
   {
     "id": "4",
-    "nome": "Liquidificador",
-    "descricao": "Liquidificador potente com várias velocidades",
+    "nome": "Travessas de vidro",
+    "descricao": "Conjunto de travessas de vidro para servir",
     "reservado": false,
-    "reservadoPor": null,
+    "reservadoPor": [],
     "categoria": "cozinha"
   },
   {
     "id": "5",
-    "nome": "Cesta de Vinhos",
-    "descricao": "Cesta com vinhos selecionados e queijos",
-    "reservado": true,
-    "reservadoPor": "weatherly",
-    "categoria": "cozinha",
-    "dataReserva": "2025-08-21T19:03:16.158Z"
+    "nome": "Tábua de corte",
+    "descricao": "Tábua de corte resistente para uso diário",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "6",
+    "nome": "Colheres de pau e silicone",
+    "descricao": "Conjunto de colheres de pau e silicone",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "7",
+    "nome": "Escorredor de pratos",
+    "descricao": "Escorredor prático para pratos e talheres",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "8",
+    "nome": "Porta temperos",
+    "descricao": "Porta temperos compacto e organizado",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "9",
+    "nome": "Saleiro e pimenteiro",
+    "descricao": "Conjunto de saleiro e pimenteiro elegante",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "10",
+    "nome": "Liquidificador",
+    "descricao": "Liquidificador de alta potência",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "11",
+    "nome": "Sanduicheira ou grill elétrico",
+    "descricao": "Aparelho elétrico para sanduíches ou grelhados",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "12",
+    "nome": "Conjunto de utensílios de silicone completo",
+    "descricao": "Kit completo de utensílios de cozinha em silicone",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "13",
+    "nome": "Jogo de potes herméticos grandes",
+    "descricao": "Potes herméticos grandes para armazenamento",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "14",
+    "nome": "Suporte para detergente e esponja",
+    "descricao": "Suporte prático para detergente e esponja",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "15",
+    "nome": "Lixeira inox para cozinha",
+    "descricao": "Lixeira de aço inox para cozinha",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "16",
+    "nome": "Porta temperos giratório",
+    "descricao": "Porta temperos giratório com frascos",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "17",
+    "nome": "Jogo americano (para mesa posta)",
+    "descricao": "Jogo americano decorativo para refeições",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "18",
+    "nome": "Batedeira",
+    "descricao": "Batedeira elétrica para massas e bolos",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "19",
+    "nome": "Mixer ou processador",
+    "descricao": "Mixer ou processador multifuncional",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "20",
+    "nome": "Cafeteira elétrica",
+    "descricao": "Cafeteira elétrica prática para o dia a dia",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "21",
+    "nome": "Conjunto de facas",
+    "descricao": "Conjunto completo de facas afiadas",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "22",
+    "nome": "Jogo de formas para bolos e tortas",
+    "descricao": "Conjunto de formas variadas para bolos e tortas",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "23",
+    "nome": "Petisqueira",
+    "descricao": "Petisqueira para servir aperitivos",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "24",
+    "nome": "Aparelho de chá e café",
+    "descricao": "Conjunto completo para servir chá e café",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "cozinha"
+  },
+  {
+    "id": "25",
+    "nome": "Organizadores para produtos de limpeza",
+    "descricao": "Organizadores práticos para armazenar produtos de limpeza",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "utilidades domésticas"
+  },
+  {
+    "id": "26",
+    "nome": "Ferro e tábua de passar roupa",
+    "descricao": "Ferro elétrico e tábua de passar roupa",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "utilidades domésticas"
+  },
+  {
+    "id": "27",
+    "nome": "Balança",
+    "descricao": "Balança digital para cozinha ou banheiro",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "utilidades domésticas"
+  },
+  {
+    "id": "28",
+    "nome": "Tapetes (para piso e chuveiro)",
+    "descricao": "Tapetes antiderrapantes para banheiro e casa",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "utilidades domésticas"
+  },
+  {
+    "id": "29",
+    "nome": "Conjunto para pia (porta-sabonete e porta-escova de dentes)",
+    "descricao": "Conjunto para organizar pia do banheiro",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "utilidades domésticas"
+  },
+  {
+    "id": "30",
+    "nome": "Jogo de cama casal",
+    "descricao": "Jogo de lençol, fronha e sobrelençol para cama de casal",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "quarto"
+  },
+  {
+    "id": "31",
+    "nome": "Edredom casal",
+    "descricao": "Edredom macio e aconchegante para cama de casal",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "quarto"
+  },
+  {
+    "id": "32",
+    "nome": "Cobertores",
+    "descricao": "Cobertores quentinhos para uso no inverno",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "quarto"
+  },
+  {
+    "id": "33",
+    "nome": "Travesseiros",
+    "descricao": "Travesseiros confortáveis para boa noite de sono",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "quarto"
+  },
+  {
+    "id": "34",
+    "nome": "Protetores de colchão",
+    "descricao": "Protetores impermeáveis para colchão",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "quarto"
+  },
+  {
+    "id": "35",
+    "nome": "Abajur de mesa",
+    "descricao": "Abajur de mesa para quarto aconchegante",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "quarto"
+  },
+  {
+    "id": "36",
+    "nome": "Jogo de toalhas",
+    "descricao": "Conjunto completo de toalhas de banho e rosto",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "quarto"
+  },
+  {
+    "id": "37",
+    "nome": "Cortinas blackout",
+    "descricao": "Cortinas blackout para bloquear luz externa",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "quarto"
+  },
+  {
+    "id": "38",
+    "nome": "Tapete para quarto",
+    "descricao": "Tapete macio para uso no quarto",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "quarto"
+  },
+  {
+    "id": "39",
+    "nome": "Porta-joias",
+    "descricao": "Porta-joias elegante para organização",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "quarto"
+  },
+  {
+    "id": "40",
+    "nome": "Cesto de roupas sujas",
+    "descricao": "Cesto para roupas sujas em tecido ou bambu",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "lavanderia"
+  },
+  {
+    "id": "41",
+    "nome": "Varal de roupas",
+    "descricao": "Varal retrátil ou dobrável para roupas",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "lavanderia"
+  },
+  {
+    "id": "42",
+    "nome": "Prendedores de roupa",
+    "descricao": "Kit de prendedores de roupas resistentes",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "lavanderia"
+  },
+  {
+    "id": "43",
+    "nome": "Tábua de passar roupas extra",
+    "descricao": "Tábua de passar roupas dobrável e resistente",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "lavanderia"
+  },
+  {
+    "id": "44",
+    "nome": "Capas para máquina de lavar",
+    "descricao": "Capa protetora para máquina de lavar roupas",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "lavanderia"
+  },
+  {
+    "id": "45",
+    "nome": "Kit organizador de lavanderia",
+    "descricao": "Kit de caixas ou cestos para organizar lavanderia",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "lavanderia"
+  },
+  {
+    "id": "46",
+    "nome": "Tapete para lavanderia",
+    "descricao": "Tapete antiderrapante para área de serviço",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "lavanderia"
+  },
+  {
+    "id": "47",
+    "nome": "Balde multiuso",
+    "descricao": "Balde resistente multiuso para lavanderia",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "lavanderia"
+  },
+  {
+    "id": "48",
+    "nome": "Escada pequena dobrável",
+    "descricao": "Escada dobrável de 2 ou 3 degraus para lavanderia",
+    "reservado": false,
+    "reservadoPor": [],
+    "categoria": "lavanderia"
   }
 ]

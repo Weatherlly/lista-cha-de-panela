@@ -112,17 +112,6 @@ app.post('/api/reservar', async (req, res) => {
             });
         }
         
-        // Verificar se o usuário já reservou algum presente
-        // const usuarioJaReservou = pessoas.some(p => 
-        //     p.nome.toLowerCase() === nomeNormalizado.toLowerCase()
-        // );
-        
-        // if (usuarioJaReservou) {
-        //     return res.json({ 
-        //         success: false, 
-        //         message: 'Você já reservou um presente' 
-        //     });
-        // }
         
         // Atualizar o presente
         presentes[presenteIndex].reservado = true;
