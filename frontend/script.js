@@ -203,14 +203,17 @@ const ListPage = {
                     ${gift.colorOptions.map(color => `<option value="${color}">${color}</option>`).join("")}
                 </select>
             ` : ''}
-            ${isReservedByMe ? `
-                <button class="remove-gift text-marsala hover:text-golden" data-gift-id="${gift.id}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
-                        <path d="M18 6 6 18"/>
-                        <path d="m6 6 12 12"/>
-                    </svg>
-                </button>
-            ` : ''}
+            ${`
+    <button class="remove-gift text-marsala hover:text-golden ${isReservedByMe ? '' : 'hidden'}" data-gift-id="${gift.id}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
+             viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+             class="lucide lucide-x">
+            <path d="M18 6 6 18"/>
+            <path d="m6 6 12 12"/>
+        </svg>
+    </button>
+`}
             <div class="gift-status text-xs font-medium ml-2 ${isReservedByMe ? 'text-marsala' : isReservedByOther ? 'text-blue-600' : gift.reservado ? 'text-gray-500' : 'text-green-600'}">
                 ${isReservedByMe ? '✅ Reservado por você' :
                 isReservedByOther ? `Reservado por ${gift.reservadoPor}` :
